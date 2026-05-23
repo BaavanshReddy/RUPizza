@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="rupizza.MainController"
+            prefWidth="900" prefHeight="620">
+
+    <top>
+        <VBox>
+            <Label text="RU Pizza - Order System" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-padding: 10;"/>
+            <Separator/>
+        </VBox>
+    </top>
+
+    <center>
+        <HBox spacing="15" style="-fx-padding: 15;">
+
+            <!-- Left: Pizza selection -->
+            <VBox spacing="8" prefWidth="220">
+                <Label text="Pizza Style:" style="-fx-font-weight: bold;"/>
+                <ComboBox fx:id="styleComboBox" prefWidth="210" onAction="#onStyleOrTypeChanged"/>
+
+                <Label text="Pizza Type:" style="-fx-font-weight: bold;"/>
+                <ComboBox fx:id="typeComboBox" prefWidth="210" onAction="#onStyleOrTypeChanged"/>
+
+                <Label text="Size:" style="-fx-font-weight: bold;"/>
+                <ComboBox fx:id="sizeComboBox" prefWidth="210" onAction="#onSizeChanged"/>
+
+                <Label text="Crust:" style="-fx-font-weight: bold;"/>
+                <Label fx:id="crustLabel" text="--"/>
+
+                <Separator/>
+
+                <Label text="Toppings:" style="-fx-font-weight: bold;"/>
+                <ListView fx:id="selectedToppingsListView" prefHeight="130"/>
+
+                <Label text="Price:" style="-fx-font-weight: bold;"/>
+                <Label fx:id="totalLabel" text="0.00" style="-fx-font-size: 16px;"/>
+            </VBox>
+
+            <!-- Center: Pizza image button (Image Button - click to refresh view) -->
+            <VBox spacing="8" prefWidth="230" alignment="TOP_CENTER">
+                <Label text="Selected Pizza:" style="-fx-font-weight: bold;"/>
+                <Button fx:id="pizzaImageButton" onAction="#onPizzaImageClicked"
+                        style="-fx-background-color: transparent; -fx-border-color: #cccccc; -fx-border-radius: 5; -fx-padding: 4;">
+                    <graphic>
+                        <ImageView fx:id="pizzaImageView" fitWidth="200" fitHeight="200" preserveRatio="true"/>
+                    </graphic>
+                </Button>
+                <Label fx:id="pizzaInfoLabel" wrapText="true"/>
+            </VBox>
+
+            <!-- Right: BYO toppings -->
+            <VBox spacing="8" prefWidth="220">
+                <Label text="Add/Remove Toppings:" style="-fx-font-weight: bold;"/>
+                <Label text="(Build Your Own only)" style="-fx-font-size: 11px;"/>
+                <ListView fx:id="availableToppingsListView" prefHeight="220"/>
+                <Button fx:id="addToppingButton" text="Add Topping" prefWidth="210" onAction="#onAddTopping"/>
+                <Button fx:id="removeToppingButton" text="Remove Topping" prefWidth="210" onAction="#onRemoveTopping"/>
+                <Label text="Max 5 toppings · $1.69 each" style="-fx-font-size: 11px;"/>
+            </VBox>
+
+        </HBox>
+    </center>
+
+    <bottom>
+        <VBox>
+            <Separator/>
+            <HBox spacing="10" style="-fx-padding: 10;" alignment="CENTER">
+                <Button text="Add to Order" prefWidth="160" prefHeight="35" onAction="#onAddToOrder"/>
+                <Button text="View Current Order" prefWidth="170" prefHeight="35" onAction="#onViewOrder"/>
+                <Button text="View Placed Orders" prefWidth="170" prefHeight="35" onAction="#onViewStoreOrders"/>
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>

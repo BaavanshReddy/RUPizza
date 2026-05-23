@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="rupizza.OrderViewController"
+            prefWidth="900" prefHeight="620">
+
+    <top>
+        <VBox>
+            <Label fx:id="orderNumberLabel" text="Current Order" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-padding: 10;"/>
+            <Separator/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="10" style="-fx-padding: 15;">
+            <Label text="Pizzas in this order:" style="-fx-font-weight: bold;"/>
+            <ListView fx:id="pizzaListView" prefHeight="330"/>
+
+            <Separator/>
+
+            <GridPane hgap="10" vgap="5" style="-fx-padding: 5;">
+                <Label text="Subtotal:" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                <Label fx:id="subtotalLabel" text="0.00" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <Label text="Sales Tax (6.625%):" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                <Label fx:id="taxLabel" text="0.00" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <Label text="Order Total:" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                <Label fx:id="orderTotalLabel" text="0.00" GridPane.rowIndex="2" GridPane.columnIndex="1" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+            </GridPane>
+        </VBox>
+    </center>
+
+    <bottom>
+        <VBox>
+            <Separator/>
+            <HBox spacing="10" style="-fx-padding: 10;" alignment="CENTER">
+                <Button text="Remove Selected Pizza" prefWidth="180" prefHeight="35" onAction="#onRemovePizza"/>
+                <Button text="Clear Order" prefWidth="130" prefHeight="35" onAction="#onClearOrder"/>
+                <Button text="Place Order" prefWidth="130" prefHeight="35" onAction="#onPlaceOrder"/>
+                <Button text="Back" prefWidth="100" prefHeight="35" onAction="#onBack"/>
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>

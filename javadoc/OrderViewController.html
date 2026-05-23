@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>OrderViewController - RU Pizza API</title>
+<style>
+body { font-family: 'DejaVu Sans', Arial, sans-serif; margin: 0; background: #fff; }
+header { background: #4a7aba; color: white; padding: 15px 20px; }
+header h1 { margin: 0; font-size: 20px; }
+.nav { background: #f5f5f5; padding: 8px 20px; border-bottom: 1px solid #ddd; font-size: 13px; }
+.nav a { margin-right: 12px; color: #4a7aba; text-decoration: none; }
+.nav a:hover { text-decoration: underline; }
+.content { padding: 20px 30px; }
+h2 { color: #2c5aa0; border-bottom: 2px solid #4a7aba; padding-bottom: 5px; }
+h3 { color: #444; }
+.class-box { border: 1px solid #ccc; border-radius: 4px; padding: 15px; margin-bottom: 20px; background: #fafafa; }
+.class-name { font-size: 18px; font-weight: bold; color: #2c5aa0; }
+.class-kind { font-size: 12px; color: #888; margin-left: 8px; }
+.field { margin: 6px 0; font-family: monospace; font-size: 13px; }
+.method { margin: 10px 0; border-left: 3px solid #4a7aba; padding-left: 10px; }
+.method-sig { font-family: monospace; font-size: 13px; font-weight: bold; }
+.method-desc { font-size: 13px; color: #555; margin-top: 3px; }
+.param { font-size: 12px; color: #666; margin-top: 2px; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+td, th { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
+th { background: #e8eef7; color: #2c5aa0; }
+tr:nth-child(even) { background: #f9f9f9; }
+a { color: #4a7aba; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style></head>
+<body>
+<header><h1>RU Pizza - API Documentation</h1></header>
+<div class="nav">
+  <a href="index.html">Overview</a>
+  <a href="Topping.html">Topping</a>
+  <a href="Crust.html">Crust</a>
+  <a href="Size.html">Size</a>
+  <a href="Pizza.html">Pizza</a>
+  <a href="Deluxe.html">Deluxe</a>
+  <a href="BBQChicken.html">BBQChicken</a>
+  <a href="Meatzza.html">Meatzza</a>
+  <a href="BuildYourOwn.html">BuildYourOwn</a>
+  <a href="PizzaFactory.html">PizzaFactory</a>
+  <a href="ChicagoPizza.html">ChicagoPizza</a>
+  <a href="NYPizza.html">NYPizza</a>
+  <a href="Order.html">Order</a>
+  <a href="StoreOrders.html">StoreOrders</a>
+  <a href="MainController.html">MainController</a>
+  <a href="OrderViewController.html">OrderViewController</a>
+  <a href="StoreOrdersController.html">StoreOrdersController</a>
+</div>
+<div class="content"><div class="class-box">
+<span class="class-name">OrderViewController</span><span class="class-kind">class — in rupizza</span>
+<p>Controller for the current order view (order-view.fxml). Shows order details and allows removal or placement of the order.</p>
+<h3>Methods</h3><div class="method"><div class="method-sig">initData(Order order)</div><div class="method-desc">Initializes the view with the given order.</div><div class="param"><b>@param</b> order - the order to display</div></div><div class="method"><div class="method-sig">onRemovePizza()</div><div class="method-desc">Removes the selected pizza from the order.</div></div><div class="method"><div class="method-sig">onClearOrder()</div><div class="method-desc">Removes all pizzas after confirmation.</div></div><div class="method"><div class="method-sig">onPlaceOrder()</div><div class="method-desc">Places the order and navigates back to main view.</div></div><div class="method"><div class="method-sig">onBack()</div><div class="method-desc">Returns to the main ordering view.</div></div></div></div>
+</body></html>

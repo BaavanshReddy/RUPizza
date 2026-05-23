@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="rupizza.StoreOrdersController"
+            prefWidth="900" prefHeight="620">
+
+    <top>
+        <VBox>
+            <Label text="Placed Orders" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-padding: 10;"/>
+            <Separator/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="10" style="-fx-padding: 15;">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Select Order:" style="-fx-font-weight: bold;"/>
+                <ComboBox fx:id="orderComboBox" prefWidth="220" onAction="#onOrderSelected"/>
+            </HBox>
+
+            <Label text="Order Details:" style="-fx-font-weight: bold;"/>
+            <ListView fx:id="orderDetailsListView" prefHeight="340"/>
+
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Label text="Order Total:" style="-fx-font-weight: bold;"/>
+                <Label fx:id="orderTotalLabel" text="0.00" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+    </center>
+
+    <bottom>
+        <VBox>
+            <Separator/>
+            <HBox spacing="10" style="-fx-padding: 10;" alignment="CENTER">
+                <Button text="Cancel Order" prefWidth="150" prefHeight="35" onAction="#onCancelOrder"/>
+                <Button text="Export Orders" prefWidth="150" prefHeight="35" onAction="#onExportOrders"/>
+                <Button text="Back" prefWidth="100" prefHeight="35" onAction="#onBack"/>
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>
